@@ -1,0 +1,242 @@
+{
+    "a_galaxy_workflow": "true", 
+    "format-version": "0.1", 
+    "name": "PyClone_BB", 
+    "steps": {
+        "1": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "3862ef47-e7b5-482d-88a8-47b02f88edc1", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [
+                {
+                    "output_name": "output", 
+                    "uuid": "31b3473c-a38c-4421-b040-367b7b3f9644", 
+                    "label": null
+                }
+            ], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "CNA_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 295, 
+                "left": 183
+            }, 
+            "tool_state": "{\"name\": \"CNA_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 1, 
+            "name": "Input dataset"
+        }, 
+        "0": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "16ef96a6-a2a0-427d-adea-08486d32b303", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [
+                {
+                    "output_name": "output", 
+                    "uuid": "097e0ab7-1c85-4dac-a74f-dbeb2625f6f4", 
+                    "label": null
+                }
+            ], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "VCF_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 199, 
+                "left": 178
+            }, 
+            "tool_state": "{\"name\": \"VCF_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 0, 
+            "name": "Input dataset"
+        }, 
+        "3": {
+            "tool_id": "pyclone", 
+            "content_id": "pyclone", 
+            "uuid": "528de804-4602-40b8-bed5-ab0dc41e09b2", 
+            "tool_version": "0.1.0", 
+            "outputs": [
+                {
+                    "type": "txt", 
+                    "name": "1B.txt"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "1C.txt"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "2A.txt"
+                }, 
+                {
+                    "type": "txt", 
+                    "name": "2B.txt"
+                }, 
+                {
+                    "type": "pdf", 
+                    "name": "clonal_results_summary.pdf"
+                }
+            ], 
+            "post_job_actions": {
+                "HideDatasetAction2A.txt": {
+                    "output_name": "2A.txt", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }, 
+                "HideDatasetActionclonal_results_summary.pdf": {
+                    "output_name": "clonal_results_summary.pdf", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }, 
+                "HideDatasetAction1C.txt": {
+                    "output_name": "1C.txt", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }, 
+                "HideDatasetAction1B.txt": {
+                    "output_name": "1B.txt", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }, 
+                "HideDatasetAction2B.txt": {
+                    "output_name": "2B.txt", 
+                    "action_type": "HideDatasetAction", 
+                    "action_arguments": {}
+                }
+            }, 
+            "workflow_outputs": [], 
+            "annotation": "", 
+            "input_connections": {
+                "input_vcf": {
+                    "output_name": "output", 
+                    "id": 0
+                }, 
+                "battenberg_file": {
+                    "output_name": "output", 
+                    "id": 1
+                }, 
+                "purity_file": {
+                    "output_name": "output", 
+                    "id": 2
+                }
+            }, 
+            "inputs": [], 
+            "tool_errors": null, 
+            "position": {
+                "top": 248, 
+                "left": 430
+            }, 
+            "tool_state": "{\"__page__\": 0, \"num_mcmc\": \"\\\"5000\\\"\", \"__rerun_remap_job_id__\": null, \"max_snv\": \"\\\"5000\\\"\", \"burn_in\": \"\\\"2000\\\"\", \"purity_file\": \"null\", \"input_vcf\": \"null\", \"battenberg_file\": \"null\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 3, 
+            "name": "PyClone Tool: Standard"
+        }, 
+        "2": {
+            "tool_id": null, 
+            "content_id": null, 
+            "uuid": "474fa9d4-2b51-4091-8f5c-68e86ea83267", 
+            "tool_version": null, 
+            "outputs": [], 
+            "workflow_outputs": [
+                {
+                    "output_name": "output", 
+                    "uuid": "0b50de78-92a1-4865-aeef-60667552276b", 
+                    "label": null
+                }
+            ], 
+            "annotation": "", 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "CELLULARITY_INPUT"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 451, 
+                "left": 180
+            }, 
+            "tool_state": "{\"name\": \"CELLULARITY_INPUT\"}", 
+            "label": null, 
+            "type": "data_input", 
+            "id": 2, 
+            "name": "Input dataset"
+        }, 
+        "4": {
+            "tool_id": "smc_het_eval", 
+            "content_id": "smc_het_eval", 
+            "uuid": "8dc171f7-0ac8-43ed-923f-78b78f84a2f3", 
+            "tool_version": "0.1.0", 
+            "outputs": [
+                {
+                    "type": "txt", 
+                    "name": "outfile"
+                }
+            ], 
+            "post_job_actions": {}, 
+            "workflow_outputs": [
+                {
+                    "output_name": "outfile", 
+                    "uuid": "04ff369d-f80d-4a39-90c8-fafac6a58f11", 
+                    "label": null
+                }
+            ], 
+            "annotation": "", 
+            "input_connections": {
+                "proportion|predfile": {
+                    "output_name": "1C.txt", 
+                    "id": 3
+                }, 
+                "cluster_assignment|predfile": {
+                    "output_name": "2A.txt", 
+                    "id": 3
+                }, 
+                "cocluster_assignment|predfile": {
+                    "output_name": "2B.txt", 
+                    "id": 3
+                }, 
+                "population|predfile": {
+                    "output_name": "1B.txt", 
+                    "id": 3
+                }
+            }, 
+            "inputs": [
+                {
+                    "name": "sample", 
+                    "description": "runtime parameter for tool SMC-Het Evaluator"
+                }
+            ], 
+            "tool_errors": null, 
+            "position": {
+                "top": 332, 
+                "left": 750
+            }, 
+            "tool_state": "{\"cocluster_assignment\": \"{\\\"ancestor\\\": {\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}, \\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"__page__\": 0, \"approx\": \"{\\\"enable\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"__rerun_remap_job_id__\": null, \"proportion\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"sample\": \"{\\\"__class__\\\": \\\"RuntimeValue\\\"}\", \"cellularity\": \"{\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}\", \"cluster_assignment\": \"{\\\"predfile\\\": null, \\\"phylogeny\\\": {\\\"submit\\\": \\\"no\\\", \\\"__current_case__\\\": 1}, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\", \"population\": \"{\\\"predfile\\\": null, \\\"submit\\\": \\\"yes\\\", \\\"__current_case__\\\": 0}\"}", 
+            "label": null, 
+            "type": "tool", 
+            "id": 4, 
+            "name": "SMC-Het Evaluator"
+        }
+    }, 
+    "annotation": "", 
+    "uuid": "b70c05eb-9734-43a5-8af3-68181912939c"
+}
